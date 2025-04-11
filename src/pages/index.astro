@@ -3,17 +3,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Services from "../components/Services.astro";
 import Techs from "../components/Techs.astro";
 import Portfolio from "../components/Portfolio.astro";
-
-import {Image} from 'astro:assets';
-import beginImage from './public/images/content/begin/bg.png';
-import avatarImage from './public/images/content/about/avatar-big.jpg';
 ---
 
 <BaseLayout title="Portfolio | Главная">
     <main class="index">
         <section class="index__begin">
             <div class="begin">
-                <Image class="begin__image" src={beginImage} alt=""/>
+                <img class="begin__image"
+                     src="images/content/begin/bg.png"
+                     width="1920px"
+                     height="955px"
+                     loading="lazy"
+                     alt=""
+                >
                 <div class="begin__wrap">
                     <div class="container">
                         <div class="begin__quote">Portfolio</div>
@@ -39,7 +41,13 @@ import avatarImage from './public/images/content/about/avatar-big.jpg';
                         <div class="about__col"></div>
                         <div class="about__col">
                             <div class="about__img">
-                                <Image class="about__img-img" src={avatarImage} alt=""/>
+                                <img class="about__img-img"
+                                     src="images/content/about/avatar-big.jpg"
+                                     width="300px"
+                                     height="400px"
+                                     loading="lazy"
+                                     alt=""
+                                >
                             </div>
                         </div>
                         <div class="about__col">
