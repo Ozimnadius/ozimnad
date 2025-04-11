@@ -3,14 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Services from "../components/Services.astro";
 import Techs from "../components/Techs.astro";
 import Portfolio from "../components/Portfolio.astro";
+
+import {Image} from 'astro:assets';
+import beginImage from './public/images/content/begin/bg.png';
+import avatarImage from './public/images/content/about/avatar-big.jpg';
 ---
 
 <BaseLayout title="Portfolio | Главная">
     <main class="index">
         <section class="index__begin">
             <div class="begin">
-                <img class="begin__image" src="images/content/begin/bg.png" width="1920px"
-                                    height="955px">
+                <Image class="begin__image" src={beginImage} alt=""/>
                 <div class="begin__wrap">
                     <div class="container">
                         <div class="begin__quote">Portfolio</div>
@@ -35,9 +38,9 @@ import Portfolio from "../components/Portfolio.astro";
                             what I'm going to do for the rest of my life.</p></div>
                         <div class="about__col"></div>
                         <div class="about__col">
-                            <div class="about__img"><img class="about__img-img"
-                                                         src="images/content/about/avatar-big.jpg" width="300px"
-                                                         height="400px"></div>
+                            <div class="about__img">
+                                <Image class="about__img-img" src={avatarImage} alt=""/>
+                            </div>
                         </div>
                         <div class="about__col">
                             <ol class="about__list">
@@ -52,7 +55,8 @@ import Portfolio from "../components/Portfolio.astro";
                                 </li>
                             </ol>
                             <a class="about__resume btn"
-                               href="https://hh.ru/resume/e1aaa07eff016819120039ed1f74545a356245" target="_blank">View</a>
+                               href="https://hh.ru/resume/e1aaa07eff016819120039ed1f74545a356245"
+                               target="_blank">View</a>
                         </div>
                     </div>
                 </div>
