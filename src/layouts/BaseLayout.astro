@@ -1,24 +1,42 @@
 ---
+import 'normalize.css/normalize.css';
+import '../styles/main.scss';
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.scss';
-const {pageTitle} = Astro.props;
+import ButtonTop from "../components/ButtonTop.astro";
+
+interface Props {
+    title: string;
+}
+const {title} = Astro.props;
 ---
 <html lang="ru">
 <head>
-    <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <meta name="viewport" content="width=device-width"/>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <meta name="generator" content={Astro.generator}/>
-    <title>{pageTitle}</title>
+    <title>{title}</title>
 </head>
 <body>
-<Header/>
-<h1>{pageTitle}</h1>
-<slot/>
-<Footer/>
+<div class="wrapper">
+    <Header/>
+    <div class="page">
+        <slot/>
+    </div>
+    <Footer/>
+</div>
+<ButtonTop/>
 <script>
-    import "../scripts/menu.js";
+    // import "../scripts/menu.js";
 </script>
 </body>
 </html>

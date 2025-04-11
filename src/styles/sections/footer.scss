@@ -1,0 +1,13 @@
+.footer {
+  padding: 40px;
+  @media (max-width: 991.98px){
+    padding: 20px;
+  }
+
+  &__copy{
+    text-align: center;
+    color: #142236;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

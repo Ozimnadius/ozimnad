@@ -1,0 +1,13 @@
+---
+import items from '../data/socials.json';
+---
+{
+    items.map((item) => (
+    <a class="header__contact"
+       href={item.link}
+       target={item.target}
+    >
+        <Fragment set:html={item.img}/>
+    </a>
+        ))
+    }

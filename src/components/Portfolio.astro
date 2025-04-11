@@ -1,0 +1,85 @@
+---
+import items from '../data/portfolio.json';
+---
+<div class="portfolio">
+    <div class="container">
+        <div class="portfolio__sub sub">My Featured Work</div>
+        <h2 class="portfolio__title title">Portfolio</h2>
+        <div class="portfolio__filter">
+            <div class="filter">
+                <div class="filter__title">Filters :</div>
+                <div class="filter__list">
+                    <a class="filter__item active" href="#" data-type="all">All</a>
+                    <a class="filter__item" href="#" data-type="shop">E-shop</a>
+                    <a class="filter__item" href="#" data-type="corp">Corporate</a>
+                    <a class="filter__item" href="#" data-type="land">Landing</a>
+                    <a class="filter__item" href="#" data-type="other">Other</a>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio__swiper swiper-container">
+            <div class="swiper-wrapper portfolio__grid">
+                {
+                    items.list.map((item) => (
+                            <div class="portfolio__item swiper-slide" data-type={item.type}>
+                                <div class="portfolio__img">
+                                    <img class="potrfolio__img-img"
+                                         src={item.thumb}
+                                         alt="lorem"
+                                         loading="lazy"
+                                    >
+                                </div>
+                                <div class="portfolio__links">
+                                    <a class="portfolio__view portfolio__link" href={item.img} target="_blank">
+                                        View Project
+                                    </a>
+                                    <a class="portfolio__link portfolio__go" href={item.link} target="_blank">
+                                        Go to project
+                                    </a>
+                                </div>
+                            </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let filter = document.querySelector('.filter');
+
+    filter.addEventListener('click', function (e) {
+        e.preventDefault();
+        let target = e.target;
+
+        if (target.classList.contains('filter__item')) {
+            let list = document.querySelectorAll('.portfolio__item'),
+                type = target.dataset.type;
+
+            filter.querySelector('.active').classList.remove('active');
+            target.classList.add('active');
+
+
+            list.forEach(function (i) {
+
+                i.classList.remove('hidden');
+                if (i.dataset.type != type && type != 'all') {
+                    i.classList.add('hidden');
+                }
+
+            });
+
+        }
+    });
+
+    let swiper = document.querySelector('.portfolio__swiper');
+
+    swiper.addEventListener('click', function (e) {
+        let target = e.target;
+
+        if (target.classList.contains('portfolio__item')) {
+            target.classList.toggle('hover');
+        }
+    });
+</script>

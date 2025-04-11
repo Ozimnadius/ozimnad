@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "astro": "^5.6.1",
-    "sass": "^1.86.3"
+    "sass": "^1.86.3",
+    "gsap": "^3.6.0",
+    "normalize.css": "^8.0.1",
+    "swiper": "^6.4.15"
   }
 }

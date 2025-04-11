@@ -1,8 +1,25 @@
 ---
 ---
-<div class="nav-links">
-    <a href="/">Главная</a>
-    <a href="/about/">О сайте</a>
-    <a href="/blog/">Блог</a>
-    <a href="/tags/">Теги</a>
-</div>
+<nav class="nav">
+    <a class="nav__item" href="#about">About me</a>
+    <a class="nav__item" href="#services">Services</a>
+    <a class="nav__item" href="#portfolio">Portfolio</a>
+    <a class="nav__item" href="#contact">Contact me</a>
+</nav>
+
+<script>
+    const nav = document.querySelector('.nav');
+    nav.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        let target = e.target;
+
+        if (target.classList.contains('nav__item')) {
+            window.scrollTo({
+                top: document.querySelector(target.hash).offsetTop,
+                behavior: 'smooth'
+            });
+        }
+
+    });
+</script>
