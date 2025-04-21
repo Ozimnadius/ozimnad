@@ -1,6 +1,18 @@
 {
   "list": [
     {
+      "type": "land",
+      "img": "images/portfolio/tvoyotaxi/img.webp",
+      "thumb": "images/portfolio/tvoyotaxi/thumb.webp",
+      "link": "https://github.com/Ozimnadius/TvoyoTaxi"
+    },
+    {
+      "type": "corp",
+      "img": "images/portfolio/goroddorog/thumb.webp",
+      "thumb": "images/portfolio/goroddorog/thumb.webp",
+      "link": "https://github.com/Ozimnadius/gorod-dorog-redesign"
+    },
+    {
       "type": "shop",
       "img": "images/portfolio/mongolcashmere/img.webp",
       "thumb": "images/portfolio/mongolcashmere/thumb.webp",
